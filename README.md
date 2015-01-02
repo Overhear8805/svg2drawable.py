@@ -4,6 +4,9 @@ This script render a .svg file into .png files in the correct resolution.
 The output .png files will be rendered into their corresponding directories, i.e
 *res/drawable-**X**dpi/output.png* in the current working directory.
 
+I've only tested this script on Arch Linux 02/jan/2015 and does not guarantee that it will work at all. 
+**Depends on InkScape for rendering!**
+
 ## Usage
 **svg2drawable** *input file* *output file* --width px --height px
 
