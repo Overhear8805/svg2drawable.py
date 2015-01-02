@@ -1,4 +1,4 @@
-# svg2drawable
+# svg2drawable.py
 ### Abstract
 This script render a .svg file into .png files in the correct resolution.
 The output .png files will be rendered into their corresponding directories, i.e
