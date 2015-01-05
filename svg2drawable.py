@@ -58,6 +58,7 @@ if not has_enough_args:
  Create the default folders that is used in Android 
  for drawables. These are created in the current 
  working directory.
+ E.g. /res/drawable-mdpi/example.png
 '''
 def make_folders():
     dir_array = ["mdpi", "hdpi", "xhdpi", "xxhdpi", "xxxhdpi"]
@@ -84,17 +85,17 @@ def render_images():
 
     for index in range(len(dir_array)):
         print("Rendering " + dir_array[index]+"...")
-        # If height is given; use height as the given arugment to InkScape.
+        # If height is given; use height as the given argument to Inkscape.
         if height:
                 y = int(height)*res_array[index]
                 cmd = "inkscape {0}  --export-area-drawing -e res/drawable-{1} -h{2}".format(input_file, dir_array[index] +"/"+output_file, y)
         
-        # If width is given; use width as the given arugment to InkScape.
+        # If width is given; use width as the given argument to Inkscape.
         elif width:
                 x = int(width)*res_array[index]
                 cmd = "inkscape {0}  --export-area-drawing -e res/drawable-{1} -w{2}".format(input_file, dir_array[index] +"/"+output_file, x) 
         
-        # If both width and height is given; user both.
+        # If both width and height is given; use both.
         else:
                 y = int(height)*res_array[index]
                 x = int(width)*res_array[index]
