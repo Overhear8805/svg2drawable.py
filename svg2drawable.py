@@ -37,8 +37,8 @@ import subprocess
 parser = argparse.ArgumentParser()
 parser.add_argument("input_file", nargs=1, help="Name of the input_file file\(.svg\)")
 parser.add_argument("output_file", nargs="?", help="Name of the output_file file\(.png\)")
-parser.add_argument("--width", help="Desired width of the drawable \(mdpi\)")
-parser.add_argument("--height", help="Desired height of the drawable \(mdpi\)")
+parser.add_argument("--width", type=int, help="Desired width of the drawable \(mdpi\)")
+parser.add_argument("--height", type=int, help="Desired height of the drawable \(mdpi\)")
 args = parser.parse_args()
 
 '''
