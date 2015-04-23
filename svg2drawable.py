@@ -67,7 +67,7 @@ def make_folders():
             os.makedirs("res/drawable-"+dir_name)
 
 def get_output_file():
-    output_file = args.output_file[0] if args.output_file else args.input_file[0]
+    output_file = args.output_file if args.output_file else args.input_file[0]
 
     if output_file.endswith(".png"):
         return output_file
