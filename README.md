@@ -1,17 +1,21 @@
 # svg2drawable.py
+
 ### Abstract
-This script render a .svg file into .png files in the correct resolution.
+
+This script renders .svg files into .png files in the correct resolution for Android.
 The output .png files will be rendered into their corresponding directories, i.e
 *res/drawable-**X**dpi/output.png* in the current working directory.
 
-I've only tested this script on Arch Linux 02/jan/2015 and do not guarantee that it will work at all. 
+Tested this script on Arch Linux 02/jan/2015, Ubuntu and Windows. 
 
 **Depends on InkScape for rendering!**
 
 ## Usage
+
 **svg2drawable** *input file* *output file* --width px --height px
 
-### Example
+### Examples
+
 Render the file "vector-logo.svg" into "logo.png" with the width 200px (height will be kept relative).
 ```
 svg2drawable vector-logo.svg logo.png --width 200 
@@ -24,7 +28,13 @@ Render the file "vector-button.svg" into "button.png" with the height 64px and w
 ```
 svg2drawable vector-button.svg button.png --height 64 --width 48
 ```
+Render all svg files into png files with the height 64px.
+```
+svg2drawable *.svg --height 64
+```
+
 ## Author
+
 Simon Cedergren <dev at onyktert.nu>
 
 Licenced under The MIT License.
