@@ -35,8 +35,8 @@ import argparse
 import subprocess
 
 parser = argparse.ArgumentParser()
-parser.add_argument("input_file", help="Name of the input_file file\(.svg\)")
-parser.add_argument("output_file", help="Name of the output_file file\(.png\)")
+parser.add_argument("input_file", nargs=1, help="Name of the input_file file\(.svg\)")
+parser.add_argument("output_file", nargs="?", help="Name of the output_file file\(.png\)")
 parser.add_argument("--width", help="Desired width of the drawable \(mdpi\)")
 parser.add_argument("--height", help="Desired height of the drawable \(mdpi\)")
 args = parser.parse_args()
@@ -66,6 +66,16 @@ def make_folders():
         for dir_name in dir_array:
             os.makedirs("res/drawable-"+dir_name)
 
+def get_output_file():
+    output_file = args.output_file[0] if args.output_file else args.input_file[0]
+
+    if output_file.endswith(".png"):
+        return output_file
+    elif output_file.endswith(".svg"):
+        return output_file[:-4] + ".png"
+    else:
+        return output_file + ".png"
+
 '''
  Render the image using InkScape.
  The images are rendered into .png files to their corresponding directory.
@@ -74,14 +84,10 @@ def make_folders():
 def render_images():
     width = args.width
     height = args.height
-    input_file = args.input_file
-    output_file = args.output_file
+    input_file = args.input_file[0]
+    output_file = get_output_file()
     dir_array = ["mdpi", "hdpi", "xhdpi", "xxhdpi", "xxxhdpi"]
     res_array = [1, 1.5, 2, 3, 4]
-    
-    # Append .png if not given as arugment. 
-    if not output_file.endswith(".png"):
-        output_file+=".png"
 
     for index in range(len(dir_array)):
         print("Rendering " + dir_array[index]+"...")
@@ -104,6 +110,7 @@ def render_images():
         # Do the actual rendering
         subprocess.call(cmd.split(), shell=False) 
         print("\n")
+
 
 # Run the code above.     
 make_folders()
