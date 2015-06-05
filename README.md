@@ -32,6 +32,10 @@ Render all svg files into png files with the height 64px.
 ```
 svg2drawable *.svg --height 64
 ```
+Render all svg files into png files with the height 64px, and removes all surrounding whitespace.
+```
+svg2drawable *.svg --height 64 --no_padding
+```
 
 ## Author
 
