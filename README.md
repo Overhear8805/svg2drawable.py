@@ -41,4 +41,4 @@ svg2drawable *.svg --height 64 --no_padding
 
 Simon Cedergren <dev at onyktert.nu>
 
-Licenced under The MIT License.
+Licenced under GPL-3 License.
