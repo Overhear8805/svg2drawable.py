@@ -36,9 +36,4 @@ Render all svg files into png files with the height 64px, and removes all surrou
 ```
 svg2drawable *.svg --height 64 --no_padding
 ```
-
-## Author
-
-Simon Cedergren <dev at onyktert.nu>
-
 Licenced under GPL-3 License.
